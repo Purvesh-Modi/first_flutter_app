@@ -17,33 +17,23 @@ class MyFlutterApp extends StatelessWidget {
   }
 }
 
-Widget getListView() => ListView(
-      children: <Widget>[
-        ListTile(
-          leading: Icon(Icons.landscape),
-          title: Text("Landscape"),
-          subtitle: Text("Beautiful View !"),
-          trailing: Icon(Icons.wb_sunny),
-        ),
-        ListTile(
-          leading: Icon(Icons.laptop),
-          title: Text("Windows"),
-        ),
-        ListTile(
-          leading: Icon(Icons.phone),
-          title: Text("Phone"),
-        ),
-        Center(
-          child: Text(
-            "Yet Another Element In List",
-            style: TextStyle(
-                fontSize: 15.0,
-                fontWeight: FontWeight.w500
-            ),
-          ),
-        ),
-      ],
-    );
+List<String> getListElement() =>
+    List.generate(1000, (counter) => "Item $counter");
+
+Widget getListView() {
+  var listItems = getListElement();
+
+  var listView = ListView.builder(
+      itemBuilder: (context, index) {
+        return ListTile(
+          leading: Icon(Icons.arrow_right),
+          title: Text(listItems[index]),
+          onTap: () => debugPrint('${listItems[index]} was tapped'),
+        );
+      }
+  );
+  return listView;
+}
 
 /*
 class MyApp extends StatelessWidget {
