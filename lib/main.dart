@@ -1,4 +1,3 @@
-import 'package:first_flutter_app/app_screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyFlutterApp());
@@ -10,15 +9,41 @@ class MyFlutterApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Exploring UI Widgets",
-        home:
-            Home() /*Scaffold(
+        home: Scaffold(
             appBar: AppBar(
-                title: Text("Made With Flutter"),
+                title: Text("Exploring ListView Widgets"),
                 backgroundColor: Colors.deepOrangeAccent),
-            body: FirstScreen())*/
-        );
+            body: getListView()));
   }
 }
+
+Widget getListView() => ListView(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.landscape),
+          title: Text("Landscape"),
+          subtitle: Text("Beautiful View !"),
+          trailing: Icon(Icons.wb_sunny),
+        ),
+        ListTile(
+          leading: Icon(Icons.laptop),
+          title: Text("Windows"),
+        ),
+        ListTile(
+          leading: Icon(Icons.phone),
+          title: Text("Phone"),
+        ),
+        Center(
+          child: Text(
+            "Yet Another Element In List",
+            style: TextStyle(
+                fontSize: 15.0,
+                fontWeight: FontWeight.w500
+            ),
+          ),
+        ),
+      ],
+    );
 
 /*
 class MyApp extends StatelessWidget {

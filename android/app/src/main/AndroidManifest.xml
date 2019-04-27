@@ -10,7 +10,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="first_flutter_app"
+        android:label="First Flutter App"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"
